@@ -1,0 +1,37 @@
+<template>
+    <template if:true={handleAlert}>
+        <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+            <span class="slds-assistive-text">error</span>
+            <span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small" title="Description of icon when needed">
+            <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"></use>
+            </svg>
+            </span>
+            <h2>Please enter something to search.
+            <a href="#">More Information</a>
+            </h2>
+            <div class="slds-notify__close">
+            <button class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse" title="Close">
+            <svg class="slds-button__icon" aria-hidden="true">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+            </svg>
+            <span class="slds-assistive-text">Close</span>
+            </button>
+            </div>
+            </div>
+
+    </template>
+    <lightning-card title="ChatGPT Integration into Salesforce">
+        <template if:true={showSpinner}>
+            <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+        </template>
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" onchange={handleInputChange} value={searchedText} placeholder="Enter the prompt you want to search..." class="slds-m-around_medium"></lightning-input>
+            <lightning-button variant="brand" label="Search" title="Primary action" onclick={handleButtonClick} class="slds-m-around_medium"></lightning-button>
+            <br />
+            <template if:true={GPTResult}>
+                <lightning-formatted-rich-text value={GPTResult}></lightning-formatted-rich-text>
+            </template>
+        </div>   
+    </lightning-card>  
+</template>

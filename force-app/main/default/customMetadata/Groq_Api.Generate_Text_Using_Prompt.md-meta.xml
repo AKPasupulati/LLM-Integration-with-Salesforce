@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Generate Text Using Prompt</label>
+    <protected>false</protected>
+    <values>
+        <field>Groq_Api_Key__c</field>
+        <value xsi:type="xsd:string">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</value>
+    </values>
+    <values>
+        <field>Groq_endpoint__c</field>
+        <value xsi:type="xsd:string">https://api.groq.com/openai/v1/chat/completions</value>
+    </values>
+</CustomMetadata>
